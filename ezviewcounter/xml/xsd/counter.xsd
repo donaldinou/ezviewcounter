@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="counters" type="counters" />
+	<xs:complexType name="counters">
+		<xs:sequence>
+			<xs:element name="counter" type="counter" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="counter">
+		<xs:complexContent>
+			<xs:extension base="counter_object">
+				<xs:sequence>
+					<xs:element name="nodes" type="nodes" minOccurs="0" maxOccurs="1" />
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="nodes">
+		<xs:sequence>
+			<xs:element name="node" type="counter_object" minOccurs="1" maxOccurs="unbounded"  />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="counter_object">
+		<xs:sequence>
+			<xs:element name="count" type="xs:nonNegativeInteger" />
+			<xs:element name="created" type="xs:dateTime" />
+			<xs:element name="modified" type="xs:dateTime" />
+			<xs:element name="remotes" type="remotes" minOccurs="0" maxOccurs="1" />
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="required" />
+		<xs:attribute name="sid" type="xs:nonNegativeInteger" use="required" />
+	</xs:complexType>
+	<xs:complexType name="remotes">
+		<xs:sequence>
+			<xs:element name="remote_address" type="remote_address" minOccurs="1" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="remote_address">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="count" type="xs:nonNegativeInteger" use="required" />
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+</xs:schema>

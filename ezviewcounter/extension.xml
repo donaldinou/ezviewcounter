@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<software xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="xml/xsd/extension.xsd">
+    <metadata>
+        <name>eZViewCounter</name>
+        <version>0.0.1</version>
+        <copyright>Copyright (C)</copyright>
+        <license>GNU General Public License v2.0</license>
+        <info_url></info_url>
+    </metadata>
+    <dependencies>
+        <uses>
+            <extension name="ezwebin" />
+        </uses>
+        <requires>
+            <extension name="ezjscore" />
+        </requires>
+    </dependencies>
+</software>

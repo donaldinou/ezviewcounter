@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<counters xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		  xsi:noNamespaceSchemaLocation="../xsd/counter.xsd">
+	<counter id="object_0" sid="0">
+		<count>0</count>
+		<created>2004-02-12T15:19:21+00:00</created>
+		<modified>2004-02-12T15:19:21+00:00</modified>
+		<remotes>
+			<remote_address count="0">127.0.0.1</remote_address>
+		</remotes>
+		<nodes>
+			<node id="node_0" sid="0">
+				<count>0</count>
+				<created>2004-02-12T15:19:21+00:00</created>
+				<modified>2004-02-12T15:19:21+00:00</modified>
+				<remotes>
+					<remote_address count="0">127.0.0.1</remote_address>
+				</remotes>
+			</node>
+		</nodes>
+	</counter>
+</counters>

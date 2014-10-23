@@ -7,9 +7,9 @@ class ezjscViewCounterServerFunctions extends ezjscServerFunctions {
      * @param unknown_type $args
      * @return array
      * @throws Exception
-     * @todo can_read
      */
     public static function count( $args ) {
+        // we also should manage can_read
         $result = array( 'id' => 0, 'update' => true, 'count' => 0 );
         if ( is_array($args) && isset($args[0]) && is_numeric($args[0]) ) {
             $result['id'] = (int)$args[0];

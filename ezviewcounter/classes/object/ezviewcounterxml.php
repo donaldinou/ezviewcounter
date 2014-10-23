@@ -3,7 +3,6 @@
  *
  * Enter description here ...
  * @author aloyant
- * @todo class for node functions?
  */
 class eZViewCounterXML extends eZViewCounterMultitonASCII {
 
@@ -26,7 +25,6 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
      * @access private
      * @param int $objectid
      * @throws Exception
-     * @todo own exception
      */
     protected function __construct( $objectId ) {
         $ini = eZINI::instance('ezviewcounter.ini');
@@ -47,7 +45,6 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
 
 
                 $schemaFilePath = __DIR__ . '/../../xml/xsd/counter.xsd';
-                // TODO put this in a helper
                 if (!is_file($schemaFilePath) || !file_exists($schemaFilePath)) {
                     throw new Exception('Not a file');
                 }
@@ -69,7 +66,6 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
     /**
      * Initialize folder and file if needed
      * @access private
-     * @todo throw error
      */
     private function init() {
         $result = true;
@@ -104,7 +100,6 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
     /**
      * Enter description here ...
      * @param unknown_type $node_id
-     * @todo generic method to create counter_object
      */
     public function create( $node_id=null ) {
         $now = new DateTime();
@@ -175,9 +170,9 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
     /**
      *
      * Enter description here ...
-     * @todo clear IP eather
      */
     public function removeCounter( $node_id=null ) {
+        // we should clear IP eather
         $element = $this->getElementById($node_id);
         if ($element instanceof DOMNode) {
             if (!empty($node_id)) {
@@ -201,9 +196,9 @@ class eZViewCounterXML extends eZViewCounterMultitonASCII {
     /**
      *
      * Enter description here ...
-     * @todo clear IP eather
      */
     public function clear( $node_id=null ) {
+        // we should clear IP eather
         $element = $this->getElementById($node_id);
         if ($element instanceof DOMNode) {
             if (!empty($node_id)) {

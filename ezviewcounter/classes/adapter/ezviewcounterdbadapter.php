@@ -66,7 +66,8 @@ class eZViewCounterDBAdapter implements ieZViewCounter {
      * @see ieZViewCounter::fetchTopList()
      */
     public function fetchTopList( $classID=false, $sectionID=false, $offset=false, $limit=false ) {
-        return $this->adapted::fetchTopList($classID, $sectionID, $offset, $limit);
+        $result = call_user_func(array($this->adapted, 'fetchTopList'), $classID, $sectionID, $offset, $limit);
+        return $result;
     }
 
 }

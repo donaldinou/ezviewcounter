@@ -303,7 +303,7 @@ class eZViewCounterDB extends eZPersistentObject {
             $result = self::fetchList( false, $offset, $limit );
         } else {
 
-            // TODO optimize
+            // NOTE: optimize this
             $conds = '';
             if ( $classID !== false ) {
                 $conds .= 'ezcontentobject.contentclass_id='.(int)$classID.' ';
